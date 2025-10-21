@@ -1,17 +1,17 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap("nameless_diamond_trap_clap_name"), name("nameless_diamond_trap") {
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoints = FragTrap::defaultHitPoints;
+	this->energyPoints = ScavTrap::defaultEnergyPoints;
+	this->attackDamage = FragTrap::defaultAttackDamage;
 	std::cout << "DiamondTrap " << this->name << " constructed." << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"), name(name) {
-	std::cout << "DiamondTrap " << this->name << " constructed." << std::endl;
 	this->hitPoints = FragTrap::defaultHitPoints;
 	this->energyPoints = ScavTrap::defaultEnergyPoints;
 	this->attackDamage = FragTrap::defaultAttackDamage;
+	std::cout << "DiamondTrap " << this->name << " constructed." << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), ScavTrap(other), FragTrap(other), name(other.name) {
@@ -37,10 +37,6 @@ void DiamondTrap::whoAmI() {
 		return;
 	}
 	std::cout << "I'm announcing that my DiamondTrap name is - " << this->name << ", but my official ClapTrap name is - " << ClapTrap::name << std::endl;
-}
-
-void DiamondTrap::attack(const std::string& target) {
-	ScavTrap::attack(target);
 }
 
 unsigned int DiamondTrap::getHitPoints() const {

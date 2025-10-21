@@ -2,16 +2,15 @@
 
 int	main() {
 	std::cout << "----- Testing ClapTrap -----" << std::endl;
-	ClapTrap	claptrap1("ClapTrap-One");
-	ClapTrap	claptrap2("ClapTrap-Two");
+	ClapTrap	claptrap("CL4P-TP");
 
-	claptrap1.attack("ClapTrap-Two");
-	claptrap2.takeDamage(5);
-	claptrap2.beRepaired(3);
-	claptrap2.attack("ClapTrap-One");
-	claptrap1.takeDamage(12);
-	claptrap1.beRepaired(5);
-	claptrap1.attack("ClapTrap-Two");
+	claptrap.attack("Enemy");
+	claptrap.takeDamage(5);
+	claptrap.beRepaired(3);
+	claptrap.beRepaired(3);
+	claptrap.takeDamage(12);
+	claptrap.beRepaired(5);
+	claptrap.attack("Enemy");
 	std::cout << "\n----- Testing destructors -----" << std::endl;
 
 	return 0;
